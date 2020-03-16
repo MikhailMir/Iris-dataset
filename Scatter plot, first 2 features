@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn import datasets
+from sklearn.decomposition import PCA
+
+iris = datasets.load_iris()
+
+# import some data to play with
+
+X = iris.data[:, :2]  # we only take the first two features.
+y = iris.target
+
+#set boundary values for x and y
+x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
+y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
+
+plt.figure(2,figsize=(8, 6))
+
+# Plot the training points  
+#"c" is an array according to which we assign colors. "cmap" defines how we map floats from "c" into colors.
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Set1, edgecolor='k') 
+# scatter plot: https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.scatter.html?highlight=scatter#matplotlib.pyplot.scatter
+# Colors: one of {'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w'}, 
+#they are the single character short-hand notations for blue, green, red, cyan, magenta, yellow, black, and white.
+
+plt.xlabel('Sepal length')
+plt.ylabel('Sepal width')
+
+plt.xlim(x_min, x_max)
+plt.ylim(y_min, y_max)
+
+#delete ticks on axes:
+#plt.xticks(())
+#plt.yticks(())
+
+plt.show()
