@@ -5,8 +5,7 @@ from sklearn import datasets
 from sklearn.decomposition import PCA
 
 iris = datasets.load_iris()
-
-'''
+```
 
 # import some data to play with
 
