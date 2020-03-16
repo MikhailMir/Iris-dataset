@@ -1,11 +1,11 @@
-```python
+# -*- coding: utf-8 -*-
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import datasets
 from sklearn.decomposition import PCA
 
 iris = datasets.load_iris()
-```
 
 # import some data to play with
 
